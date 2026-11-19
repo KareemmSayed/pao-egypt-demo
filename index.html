@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PÀO · Boba &amp; More (波巴) — Egypt’s Boba Tea Pioneers</title>
+  <meta name="description" content="Crafted Taiwanese milk teas, ceremonial Japanese matcha, warm brown-sugar pearls, crispy croffles, udon noodle boxes &amp; sourdough toasties across 23+ spots in Cairo, Alexandria &amp; Sahel." />
+  <link rel="icon" type="image/svg+xml" href="assets/brand/pao-fav-icon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body>
+  <!-- ====================================================================
+       SITE HEADER
+       ==================================================================== -->
+  <header class="site-header is-dark-surface" id="siteHeader">
+    <div class="container">
+      <a href="#hero" class="brand-mark" aria-label="PÀO Home">
+        <img src="assets/brand/pao-logo-light.svg" alt="PÀO Boba &amp; More" class="brand-logo-img brand-logo-img--light" />
+        <img src="assets/brand/pao-logo.svg" alt="PÀO Boba &amp; More" class="brand-logo-img brand-logo-img--dark" />
+        <span class="brand-seal-tag">BOBA &amp; MORE<br />波巴 · EGYPT</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="#story">Our Craft</a>
+        <a href="#menu">Drinks</a>
+        <a href="#food">Food &amp; Toasties</a>
+        <a href="#merch">Merch Drop</a>
+        <a href="#branches">Branches</a>
+        <a href="#catering">Catering</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="tray-trigger" id="openTrayBtn" aria-label="Open Order Tray">
+          <span>Tray</span>
+          <span class="tray-badge" id="trayCount">0</span>
+        </button>
+        <a href="#menu" class="btn btn--cream btn--sm header-cta-desktop" id="headerCraftBtn">Craft a Cup</a>
+        <button type="button" class="nav-toggle" id="openMobileNav" aria-label="Open menu">
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+            <path d="M1 1.5H17M1 7H17M1 12.5H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <img src="assets/brand/pao-logo-light.svg" alt="PÀO" style="height:36px;" />
+      <button type="button" class="close-circle" id="closeMobileNav" style="color:var(--cream);border-color:var(--pine-line);" aria-label="Close navigation">&times;</button>
+    </div>
+    <nav class="mobile-nav__links">
+      <a href="#story" class="mnav-link">Our Craft</a>
+      <a href="#menu" class="mnav-link">Drinks Menu</a>
+      <a href="#food" class="mnav-link">Food, Noodles &amp; Toasties</a>
+      <a href="#merch" class="mnav-link">Beyond the Cup · Merch</a>
+      <a href="#branches" class="mnav-link">23+ Branches</a>
+      <a href="#catering" class="mnav-link">Event Catering</a>
+    </nav>
+    <div style="font-family:var(--font-mono);font-size:12px;color:var(--sage);">
+      HOTLINE: <a href="tel:+201028888882" style="color:var(--cream);">010 2888 8882</a> &nbsp;·&nbsp; CATERING: <a href="tel:+201055555433" style="color:var(--cream);">010 5555 5433</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ====================================================================
+         SECTION 1: HERO — "MORE THAN A DRINK. IT'S AN EXPERIENCE."
+         ==================================================================== -->
+    <section class="hero" id="hero">
+      <div class="hero__ambient" id="heroAmbient" aria-hidden="true"></div>
+
+      <div class="container hero__grid">
+        <div class="hero__left">
+          <div class="hero__meta">
+            <span class="chop-stamp">波巴</span>
+            <span>Cairo · Alexandria · Sahel · Since 2023</span>
+          </div>
+
+          <h1 class="hero__title">
+            More than a drink.
+            <em>It’s an experience.</em>
+          </h1>
+
+          <p class="hero__lead">
+            Egypt’s boba tea pioneers — stone-ground ceremonial matcha, warm brown-sugar tapioca pearls, flaky croffles, wok-tossed udon noodle boxes, and pressed sourdough toasties across 23+ spots.
+          </p>
+
+          <div class="hero__cta-row">
+            <button type="button" class="btn btn--cream" id="heroCraftActiveBtn">
+              <span>Craft Your Cup</span>
+              <span aria-hidden="true">&rarr;</span>
+            </button>
+            <a href="#menu" class="btn btn--ghost-light">Explore 67+ Drinks</a>
+          </div>
+
+          <div class="hero-dial">
+            <div class="hero-dial__head">
+              <span>Pour Preview · Pick a Signature</span>
+              <span id="heroSealCode">SIGNATURE · 01</span>
+            </div>
+            <div class="hero-dial__tabs" id="heroDialTabs" role="tablist" aria-label="Featured Drinks"></div>
+          </div>
+        </div>
+
+        <div class="hero-stage">
+          <div class="hero-cup-card" id="heroCupCard">
+            <div class="hero-cup-card__top">
+              <span id="heroCupSeries">PÀO SPECIALS</span>
+              <span class="seal-pill" id="heroSealState">
+                <span class="seal-pill__dot"></span>
+                <span>HEAT-SEALED</span>
+              </span>
+            </div>
+
+            <div class="hero-cup-visual" id="heroCupVisual">
+              <div class="pierce-straw" aria-hidden="true"></div>
+              <img id="heroCupImg" src="assets/img/drinks/brown-sugar-milk-boba.webp" alt="Brown Sugar Milk Boba" />
+            </div>
+
+            <div class="hero-cup-card__info">
+              <div class="hero-cup-card__title-row">
+                <h2 class="hero-cup-card__name" id="heroCupName">Brown Sugar Milk Boba</h2>
+                <span class="hero-cup-card__price" id="heroCupPrice">159 EGP</span>
+              </div>
+              <p class="hero-cup-card__tasting" id="heroCupTasting">
+                Warm slow-simmered muscovado tapioca pearls striped along chilled velvety fresh milk.
+              </p>
+
+              <div class="hero-cup-card__specs">
+                <div class="cup-spec">
+                  <span>Body</span>
+                  <strong id="heroSpecBody">Velvety &amp; Malty</strong>
+                </div>
+                <div class="cup-spec">
+                  <span>Pearls</span>
+                  <strong id="heroSpecPearls">Warm Brown Sugar</strong>
+                </div>
+                <div class="cup-spec">
+                  <span>Finish</span>
+                  <strong id="heroSpecFinish">Caramelized Cream</strong>
+                </div>
+              </div>
+
+              <div class="hero-cup-card__actions">
+                <button type="button" class="pierce-btn" id="pierceSealBtn">
+                  <span>✦</span>
+                  <span id="pierceSealText">Pierce the Seal</span>
+                </button>
+                <button type="button" class="btn btn--pine btn--sm" id="heroCustomizeBtn">Customize &amp; Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__foot">
+        <div class="container">
+          <div class="hero__foot-items">
+            <span><span class="live-dot"></span>24/7 DRIVE-THRU · THE DRIIVE &amp; ALEXANDRIA POINT 6</span>
+            <span>DELIVERY VIA TALABAT &amp; INSTASHOP</span>
+          </div>
+          <span>SCROLL TO POUR &darr;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: BRAND STORY — "EGYPT'S BOBA TEA PIONEERS"
+         ==================================================================== -->
+    <section class="story" id="story">
+      <div class="container">
+        <div class="story__intro" data-reveal>
+          <div>
+            <div class="eyebrow">
+              <span class="chop-stamp">波巴</span>
+              <span>Egypt’s Boba Tea Pioneers</span>
+            </div>
+            <h2 class="section-heading">
+              25+ years of retail craft — <em>poured into every cup.</em>
+            </h2>
+          </div>
+
+          <p class="story__copy">
+            Born from a childhood obsession and shaped by over <strong>25 years of world-class Apple retail hospitality</strong>, PÀO brought authentic Taiwanese boba culture to Egypt in 2023. Every cup is brewed fresh, every pearl simmered warm in small batches, and every visit designed as <strong>your everyday escape</strong>.
+          </p>
+        </div>
+
+        <div class="story__media">
+          <figure class="story-frame story-frame--tall" data-reveal>
+            <img src="assets/img/editorial/district5-flagship.webp" alt="PÀO Flagship Glass Facade at District 5 by Marakez, New Cairo" loading="lazy" />
+            <figcaption class="story-frame__cap">
+              <span>District 5 by Marakez · New Cairo Flagship</span>
+              <span>Drinks &amp; Food</span>
+            </figcaption>
+          </figure>
+
+          <div class="story__stack">
+            <figure class="story-frame story-frame--half" data-reveal>
+              <img src="assets/img/editorial/boba-pearl-pour.webp" alt="Warm brown-sugar tapioca pearls scooped into PÀO cup" loading="lazy" />
+              <figcaption class="story-frame__cap">
+                <span>Slow-Simmered Pearls</span>
+                <span>Fresh Batches</span>
+              </figcaption>
+            </figure>
+
+            <figure class="story-frame story-frame--half" data-reveal>
+              <img src="assets/img/editorial/golden-boba-croffle.webp" alt="Hand holding glowing PÀO brown sugar boba next to flaky PÀO croffle" loading="lazy" />
+              <figcaption class="story-frame__cap">
+                <span>Boba &amp; Croffle Pairing</span>
+                <span>Everyday Escape</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="pillars" data-reveal>
+          <article>
+            <div class="pillar__num">01 / FRESHNESS</div>
+            <h3 class="pillar__title">Made fresh every hour.</h3>
+            <p class="pillar__desc">Small-batch black tapioca simmered warm in muscovado, tea leaves steeped clean — never powdered shortcuts.</p>
+          </article>
+          <article>
+            <div class="pillar__num">02 / AUTHENTICITY</div>
+            <h3 class="pillar__title">Real ceremonial craft.</h3>
+            <p class="pillar__desc">First-harvest Japanese matcha whisked to order, roasted taro root, and specialty espresso pulled fresh.</p>
+          </article>
+          <article>
+            <div class="pillar__num">03 / JOY</div>
+            <h3 class="pillar__title">Happiness in every sip.</h3>
+            <p class="pillar__desc">From the snap of piercing our orange bear seal lid to sharing croffles and udon boxes with friends.</p>
+          </article>
+          <article>
+            <div class="pillar__num">04 / ACCESS</div>
+            <h3 class="pillar__title">Zero-sugar &amp; 24/7 bars.</h3>
+            <p class="pillar__desc">Customize sweetness down to 0% Skinny monkfruit &amp; oat milk — or roll through our 24/7 Drive-Thrus anytime.</p>
+          </article>
+        </div>
+
+        <div class="metrics-strip" data-reveal>
+          <div>
+            <div class="metric__val">23+</div>
+            <div class="metric__lbl">Branches · Cairo, Alex &amp; Sahel</div>
+          </div>
+          <div>
+            <div class="metric__val">85+</div>
+            <div class="metric__lbl">Drinks, Noodles, Toasties &amp; Bakes</div>
+          </div>
+          <div>
+            <div class="metric__val">24/7</div>
+            <div class="metric__lbl">Two Non-Stop Drive-Thru Lanes</div>
+          </div>
+          <div>
+            <div class="metric__val">25+ Yrs</div>
+            <div class="metric__lbl">Hospitality &amp; Retail Craft Roots</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: FULL INTERACTIVE DRINKS MENU & "CRAFT YOUR CUP"
+         ==================================================================== -->
+    <section class="menu-section" id="menu">
+      <div class="seigaiha-band" aria-hidden="true"></div>
+
+      <div class="container menu-header" data-reveal>
+        <div>
+          <div class="eyebrow">
+            <span class="chop-stamp">波巴</span>
+            <span>Complete 12-Series Drink Bar</span>
+          </div>
+          <h2 class="section-heading">
+            Craft your cup. <em>All 67 pours.</em>
+          </h2>
+        </div>
+
+        <div class="menu-controls">
+          <div class="menu-search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+            <input type="search" id="menuSearchInput" placeholder="Search matcha, taro, pistachio..." aria-label="Search drinks" />
+          </div>
+          <button type="button" class="skinny-toggle" id="skinnyFilterBtn" aria-pressed="false">
+            <span>✦</span>
+            <span>Skinny Ready</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="series-rail-wrap">
+        <div class="series-rail" id="seriesRail" role="tablist" aria-label="Drink Series"></div>
+      </div>
+
+      <div class="container">
+        <div class="menu-series-banner">
+          <h3 id="activeSeriesTitle">Signatures</h3>
+          <p id="activeSeriesSubtitle">Most loved across Cairo &amp; Alex</p>
+        </div>
+
+        <div class="drinks-grid" id="drinksGrid"></div>
+
+        <div class="menu-footnote">
+          <span>ADD-ONS: + ESPRESSO SHOT 22 EGP &nbsp;·&nbsp; + ALTERNATIVE MILK (OAT / ALMOND / COCONUT) 44 EGP</span>
+          <span>*ALL MENU BOARD PRICES IN EGP EXCLUDE VAT</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: SAVORY COUNTER & BAKERY — "FEED YOUR SOUL"
+         ==================================================================== -->
+    <section class="food-section" id="food">
+      <div class="seigaiha-band seigaiha-band--dark" aria-hidden="true"></div>
+
+      <div class="container food-section__inner">
+        <div class="food-head" data-reveal>
+          <div>
+            <div class="eyebrow eyebrow--light">
+              <span class="chop-stamp">擔仔麵</span>
+              <span>Food Series &amp; Bakery Counter</span>
+            </div>
+            <h2 class="section-heading section-heading--light">
+              Feed your soul. <em>Beyond the straw.</em>
+            </h2>
+          </div>
+          <p class="food-head__sub">
+            From wok-tossed udon noodle boxes and crispy PÀO Pops to our newly pressed sourdough toasties and flaky croffles crowned with warm pearls.
+          </p>
+        </div>
+
+        <!-- Interactive Noodle Box Builder -->
+        <div class="noodle-stage" data-reveal>
+          <div class="noodle-photo">
+            <img src="assets/img/editorial/noodle-box-dining.webp" alt="Friends enjoying PÀO dark-green Noodle Boxes with chopsticks and boba cups" loading="lazy" />
+            <div class="noodle-photo__badge">
+              <span>擔仔麵</span>
+              <span>SERVED HOT AT 8 FOOD BRANCHES</span>
+            </div>
+          </div>
+
+          <div class="noodle-builder">
+            <span class="eyebrow eyebrow--light" style="margin-bottom:8px;">Interactive Box Builder</span>
+            <h3 class="noodle-builder__title">The Noodle Box</h3>
+            <p class="noodle-builder__desc">
+              Springy udon noodles wok-tossed in our glossy house-made savoury signature sauce. Choose your protein and dial in your heat level.
+            </p>
+
+            <div class="builder-group">
+              <div class="builder-group__label">
+                <span>01 · Protein Add-On</span>
+                <span id="noodleProteinHint">Base 220 EGP</span>
+              </div>
+              <div class="option-grid" id="noodleProteinOpts"></div>
+            </div>
+
+            <div class="builder-group">
+              <div class="builder-group__label">
+                <span>02 · Spicy Chilli Meter</span>
+                <span id="noodleSpiceHint">Mild · No charge</span>
+              </div>
+              <div class="option-grid" id="noodleSpiceOpts"></div>
+            </div>
+
+            <div class="noodle-builder__foot">
+              <div class="noodle-price-readout">
+                <span>Box Total</span>
+                <strong id="noodleTotal">220 EGP</strong>
+              </div>
+              <button type="button" class="btn btn--cream" id="addNoodleBtn">Add Noodle Box to Tray</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PÀO Pops -->
+        <div class="pops-grid" id="popsGrid" data-reveal></div>
+
+        <!-- Bakery & Sourdough Toasties Toggle Counter -->
+        <div class="bakery-bar" data-reveal>
+          <div class="bakery-bar__head">
+            <div>
+              <div class="eyebrow eyebrow--light" style="margin-bottom:10px;">
+                <span>✦</span>
+                <span>Pressed Sourdough &amp; Daily Bakes</span>
+              </div>
+              <h3 class="section-heading section-heading--light" style="font-size:clamp(1.75rem,3vw,2.6rem);">
+                Toasties &amp; <em>Croffles.</em>
+              </h3>
+            </div>
+
+            <div class="counter-tabs" role="tablist" aria-label="Bakery & Toasties">
+              <button type="button" class="counter-tab is-active" data-counter="toasties">NEW · Sourdough Toasties (5)</button>
+              <button type="button" class="counter-tab" data-counter="pastries">Croffles &amp; Cookies (6)</button>
+            </div>
+          </div>
+
+          <!-- Toasties Panel -->
+          <div id="counterToasties" class="toasties-layout">
+            <div class="toastie-list" id="toastieList"></div>
+            <div class="toastie-gallery">
+              <figure class="toastie-tile">
+                <img src="assets/img/ig/toasties-stack.webp" alt="Stack of all 5 PÀO Sourdough Toasties" loading="lazy" />
+              </figure>
+              <figure class="toastie-tile">
+                <img src="assets/img/ig/toasties-tray.webp" alt="PÀO Sourdough Toasties served on steel tray" loading="lazy" />
+              </figure>
+              <div class="toastie-collab-note">
+                <strong>Collab Bakery Highlights:</strong> Watch <strong>@pao.egy</strong> for limited drops like our viral <em>PÀO × Ami’s Bakery Cookie Crush</em> and <em>PÀO × Buttered Scoopable Cookie</em> trays.
+              </div>
+            </div>
+          </div>
+
+          <!-- Croffles & Pastries Panel -->
+          <div id="counterPastries" class="pastries-grid is-hidden"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: BEYOND THE CUP — LOOKBOOK & MERCH DROP
+         ==================================================================== -->
+    <section class="merch-section" id="merch">
+      <div class="container">
+        <div class="merch-head" data-reveal>
+          <div>
+            <div class="eyebrow">
+              <span class="chop-stamp">波巴</span>
+              <span>The Boba Club Drop</span>
+            </div>
+            <h2 class="section-heading">
+              Beyond the cup. <em>Objects &amp; wear.</em>
+            </h2>
+          </div>
+          <p class="story__copy" style="max-width:44ch;">
+            Limited-run <strong>PÀO × Fairoza</strong> drink-scented soy candles, heavyweight embroidered Boba Club crewnecks, and washed caps crafted with The Cap Supply Co.
+          </p>
+        </div>
+
+        <!-- Real 1024×1280 Fashion Lookbook Triptych/Quad -->
+        <div class="merch-lookbook" data-reveal>
+          <figure class="lookbook-shot">
+            <img src="assets/img/editorial/lookbook-bubbles-back.webp" alt="Model wearing PÀO Bubbles Over Troubles embroidered crewneck" loading="lazy" />
+            <figcaption class="lookbook-shot__tag">Bubbles Over Troubles</figcaption>
+          </figure>
+          <figure class="lookbook-shot">
+            <img src="assets/img/editorial/lookbook-window-boy.webp" alt="Model outside PÀO store wearing Not So Ordinary Boba Club crewneck" loading="lazy" />
+            <figcaption class="lookbook-shot__tag">Not So Ordinary Club</figcaption>
+          </figure>
+          <figure class="lookbook-shot">
+            <img src="assets/img/editorial/lookbook-good-mood.webp" alt="Model holding boba wearing blush-pink PÀO Good Mood crewneck" loading="lazy" />
+            <figcaption class="lookbook-shot__tag">Good Mood Fleece</figcaption>
+          </figure>
+          <figure class="lookbook-shot">
+            <img src="assets/img/editorial/lookbook-pink-cap.webp" alt="Street editorial of Bubble Tea Baddies cap and PÀO cup" loading="lazy" />
+            <figcaption class="lookbook-shot__tag">Bubble Tea Baddies</figcaption>
+          </figure>
+        </div>
+
+        <div class="merch-filters" id="merchFilters" role="tablist" aria-label="Merch Categories">
+          <button type="button" class="series-tab is-active" data-merch="all">All Objects (13)</button>
+          <button type="button" class="series-tab" data-merch="candles">PÀO × Fairoza Candles (4)</button>
+          <button type="button" class="series-tab" data-merch="apparel">Crewnecks (3)</button>
+          <button type="button" class="series-tab" data-merch="accessories">Caps &amp; Glassware (6)</button>
+        </div>
+
+        <div class="merch-grid" id="merchGrid"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: @PAO.EGY CULTURE FILMSTRIP
+         ==================================================================== -->
+    <section class="culture-section" id="culture">
+      <div class="container culture-head" data-reveal>
+        <div>
+          <div class="eyebrow">
+            <span>✦</span>
+            <span>@pao.egy · Community &amp; Drops</span>
+          </div>
+          <h2 class="section-heading">
+            All things boba. <em>Caught in the wild.</em>
+          </h2>
+        </div>
+        <a href="https://www.instagram.com/pao.egy/" target="_blank" rel="noopener noreferrer" class="btn btn--pine btn--sm">
+          Follow @pao.egy &nearr;
+        </a>
+      </div>
+
+      <div class="filmstrip" id="cultureFilmstrip"></div>
+
+      <div class="container ig-drops-row" data-reveal>
+        <div class="ig-drops-label">
+          <span>Recent Grid Highlights · @pao.egy</span>
+          <span>Cairo · Alex · Sahel</span>
+        </div>
+        <div class="ig-drops-grid" id="igDropsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: BRANCH FINDER & LIVE CAIRO STATUS
+         ==================================================================== -->
+    <section class="branches-section" id="branches">
+      <div class="container">
+        <div class="branches-head" data-reveal>
+          <div>
+            <div class="eyebrow">
+              <span class="chop-stamp">波巴</span>
+              <span>Find Your Nearest Escape</span>
+            </div>
+            <h2 class="section-heading">
+              23+ spots across Egypt. <em>Open late.</em>
+            </h2>
+          </div>
+
+          <div class="cairo-clock" id="cairoClock">
+            <span class="live-dot"></span>
+            <span>Cairo Time · Loading…</span>
+          </div>
+        </div>
+
+        <div class="branches-toolbar">
+          <div class="region-tabs" id="regionTabs" role="tablist" aria-label="Branch Regions">
+            <button type="button" class="series-tab is-active" data-region="east">New Cairo &amp; East (6)</button>
+            <button type="button" class="series-tab" data-region="west">Sheikh Zayed &amp; 6 Oct (6)</button>
+            <button type="button" class="series-tab" data-region="alex">Alexandria &amp; Zamalek (2)</button>
+            <button type="button" class="series-tab" data-region="sahel">Sahel · Summer (9)</button>
+          </div>
+
+          <div class="branch-toggles">
+            <button type="button" class="skinny-toggle" id="filterFoodBtn" aria-pressed="false">Food Menu</button>
+            <button type="button" class="skinny-toggle" id="filter24hBtn" aria-pressed="false">24/7 Drive-Thru</button>
+          </div>
+        </div>
+
+        <div class="branches-grid" id="branchesGrid"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 8: CATERING — "BRING PÀO TO YOUR EVENT"
+         ==================================================================== -->
+    <section class="catering-section" id="catering">
+      <div class="container catering-grid">
+        <div data-reveal>
+          <div class="eyebrow eyebrow--light">
+            <span>✦</span>
+            <span>Mobile Boba Bars &amp; Activations</span>
+          </div>
+          <h2 class="section-heading section-heading--light">
+            Bring PÀO <em>to your event.</em>
+          </h2>
+
+          <div class="catering-tabs" id="cateringTabs" role="tablist" aria-label="Event Types"></div>
+
+          <figure class="catering-stage-photo">
+            <img id="cateringPhoto" src="assets/img/events/catering-gala-night.webp" alt="Illuminated PÀO mobile boba bar at an evening gala" loading="lazy" />
+            <figcaption class="catering-stage-photo__cap" id="cateringCaption">Real PÀO wedding &amp; gala bar setup in Cairo</figcaption>
+          </figure>
+
+          <div class="catering-detail">
+            <h3 id="cateringTitle">Illuminated mobile boba bars for unforgettable toasts.</h3>
+            <p id="cateringDesc"></p>
+            <ul class="catering-bullets" id="cateringBullets"></ul>
+          </div>
+        </div>
+
+        <div class="catering-form-card" data-reveal>
+          <div class="catering-form-card__head">
+            <h3>Request a Catering Quote</h3>
+            <a href="tel:+201055555433" class="catering-hotline">Direct: 010 5555 5433</a>
+          </div>
+
+          <form id="cateringForm" class="form-grid">
+            <div class="form-field">
+              <label for="catFirst">First Name</label>
+              <input id="catFirst" name="firstName" type="text" required placeholder="Nour" />
+            </div>
+            <div class="form-field">
+              <label for="catLast">Last Name</label>
+              <input id="catLast" name="lastName" type="text" required placeholder="El-Masry" />
+            </div>
+            <div class="form-field">
+              <label for="catPhone">Phone / WhatsApp</label>
+              <input id="catPhone" name="phone" type="tel" required placeholder="010 xxxx xxxx" />
+            </div>
+            <div class="form-field">
+              <label for="catType">Event Type</label>
+              <select id="catType" name="eventType">
+                <option value="Weddings &amp; Private Events">Weddings &amp; Private Events</option>
+                <option value="Corporate Events">Corporate Events</option>
+                <option value="Brand Activations">Brand Activations</option>
+                <option value="Birthday &amp; Celebrations">Birthday &amp; Celebrations</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="catDate">Event Date</label>
+              <input id="catDate" name="eventDate" type="date" required />
+            </div>
+            <div class="form-field">
+              <label for="catGuests">Estimated Guests</label>
+              <input id="catGuests" name="guests" type="number" min="30" max="2000" step="10" value="150" required />
+            </div>
+
+            <div class="guest-estimator">
+              <span>Recommended Bar Setup:</span>
+              <strong id="setupEstimate">1 Illuminated Bar · 2 Baristas · 4 Flavors</strong>
+            </div>
+
+            <div class="form-field form-field--full">
+              <label for="catMsg">Venue &amp; Flavor Notes</label>
+              <textarea id="catMsg" name="message" rows="3" placeholder="Tell us your venue (New Cairo, Zayed, Sahel…) and favorite drinks or custom cup sleeves."></textarea>
+            </div>
+
+            <div class="form-field form-field--full">
+              <button type="submit" class="btn btn--pine" style="width:100%;">Get a Catering Quote &rarr;</button>
+            </div>
+          </form>
+
+          <div id="cateringConfirm" class="form-confirmation is-hidden" role="status"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       SITE FOOTER
+       ==================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-row">
+            <img src="assets/brand/pao-logo-light.svg" alt="PÀO" class="footer-logo" />
+            <img src="assets/brand/pao-logomark.svg" alt="PÀO Bear Mascot" class="footer-bear" />
+          </div>
+          <p class="footer-blurb">
+            Egypt’s boba tea pioneers. Crafted beverages, bold flavours, fresh bakes &amp; savoury udon boxes — your everyday escape across Cairo, Alexandria &amp; Sahel.
+          </p>
+          <span class="chop-stamp" style="color:var(--sage);">波巴 · ALL THINGS BOBA</span>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#story">Our Craft Story</a></li>
+            <li><a href="#menu">Full 12-Series Drinks</a></li>
+            <li><a href="#food">Noodle Box &amp; Toasties</a></li>
+            <li><a href="#merch">PÀO × Fairoza &amp; Merch</a></li>
+            <li><a href="#branches">23+ Branch Locator</a></li>
+            <li><a href="#catering">Event Catering</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact &amp; HQ</h4>
+          <ul>
+            <li>Portal B · Beverly Hills,<br />Al Sheikh Zayed, Egypt</li>
+            <li><a href="mailto:info@paoeg.com">info@paoeg.com</a></li>
+            <li>Hotline: <a href="tel:+201028888882">010 2888 8882</a></li>
+            <li>Catering: <a href="tel:+201055555433">010 5555 5433</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Follow &amp; Delivery</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/pao.egy/" target="_blank" rel="noopener noreferrer">Instagram · @pao.egy &nearr;</a></li>
+            <li><a href="https://www.tiktok.com/@pao.egypt" target="_blank" rel="noopener noreferrer">TikTok · @pao.egypt &nearr;</a></li>
+            <li><a href="https://www.facebook.com/paoegypt/" target="_blank" rel="noopener noreferrer">Facebook · /paoegypt &nearr;</a></li>
+            <li style="margin-top:8px;color:var(--blush-tint);font-family:var(--font-mono);font-size:11px;">DELIVERY: TALABAT · INSTASHOP</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 PÀO · BOBA &amp; MORE — UNOFFICIAL REDESIGN CONCEPT DEMO</span>
+        <span>DATA &amp; PHOTOGRAPHY SOURCED FROM PAOEG.COM &amp; @PAO.EGY</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       INTERACTIVE "CRAFT YOUR CUP" CUSTOMIZER MODAL
+       ==================================================================== -->
+  <div class="modal-backdrop" id="customizerModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="custTitle">
+    <div class="customizer-dialog">
+      <div class="customizer-preview">
+        <div style="width:100%;display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:10.5px;color:var(--pine);">
+          <span>CRAFT YOUR CUP</span>
+          <span class="chop-stamp">波巴</span>
+        </div>
+        <img id="custImg" src="assets/img/drinks/brown-sugar-milk-boba.webp" alt="" />
+        <div class="cup-sticker" id="cupSticker">
+          <div class="cup-sticker__head">
+            <span>PÀO · <span id="stickerBranch">DISTRICT 5</span></span>
+            <span id="stickerPrice">159 EGP</span>
+          </div>
+          <div id="stickerDrink" style="font-weight:600;">BROWN SUGAR MILK BOBA</div>
+          <div id="stickerSpecs">REG · 100% CLASSIC · REG ICE · WHOLE MILK</div>
+          <div id="stickerAddons" style="color:var(--terracotta);"></div>
+        </div>
+      </div>
+
+      <div class="customizer-controls">
+        <div class="customizer-top">
+          <div>
+            <div class="eyebrow" style="margin-bottom:6px;" id="custSeries">PÀO SPECIALS</div>
+            <h3 id="custTitle">Brown Sugar Milk Boba</h3>
+          </div>
+          <button type="button" class="close-circle" id="closeCustomizer" aria-label="Close customizer">&times;</button>
+        </div>
+
+        <div class="cust-group">
+          <label>01 · Cup Size</label>
+          <div class="cust-pills" id="custSizeOpts"></div>
+        </div>
+
+        <div class="cust-group">
+          <label>02 · Sweetness Level (Skinny Monkfruit Available)</label>
+          <div class="cust-pills" id="custSweetOpts"></div>
+        </div>
+
+        <div class="cust-group" id="custIceGroup">
+          <label>03 · Ice Level</label>
+          <div class="cust-pills" id="custIceOpts"></div>
+        </div>
+
+        <div class="cust-group">
+          <label>04 · Milk Base</label>
+          <div class="cust-pills" id="custMilkOpts"></div>
+        </div>
+
+        <div class="cust-group">
+          <label>05 · Extra Boosters &amp; Toppings</label>
+          <div class="cust-pills" id="custAddonOpts"></div>
+        </div>
+
+        <div class="customizer-foot">
+          <div>
+            <div style="font-family:var(--font-mono);font-size:10.5px;color:var(--ink-muted);text-transform:uppercase;">Cup Total</div>
+            <div class="customizer-total" id="custTotal">159 EGP</div>
+          </div>
+          <button type="button" class="btn btn--pine" id="custConfirmAdd">Seal &amp; Add to Tray</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       SLIDE-OVER ORDER TRAY & PICKUP TICKET DRAWER
+       ==================================================================== -->
+  <div class="drawer-backdrop" id="trayBackdrop"></div>
+  <aside class="tray-drawer" id="trayDrawer" aria-hidden="true" aria-label="Your PÀO Order Tray">
+    <div class="tray-drawer__head">
+      <h3>Your PÀO Tray</h3>
+      <button type="button" class="close-circle" id="closeTrayBtn" aria-label="Close tray">&times;</button>
+    </div>
+
+    <div class="tray-branch-bar">
+      <span style="font-family:var(--font-mono);font-size:11px;color:var(--pine);">PICKUP SPOT:</span>
+      <select id="trayBranchSelect" aria-label="Select pickup branch"></select>
+    </div>
+
+    <div class="tray-items" id="trayItems"></div>
+
+    <div class="tray-drawer__foot">
+      <div class="tray-summary-row">
+        <span>Subtotal (excl. VAT)</span>
+        <span id="traySubtotal">0 EGP</span>
+      </div>
+      <div class="tray-summary-row">
+        <span>Est. 14% VAT</span>
+        <span id="trayVat">0 EGP</span>
+      </div>
+      <div class="tray-summary-row tray-summary-row--total">
+        <span>Estimated Total</span>
+        <span id="trayTotal">0 EGP</span>
+      </div>
+      <button type="button" class="btn btn--pine" id="generateTicketBtn" style="width:100%;">
+        Generate PÀO Order Ticket
+      </button>
+      <div id="trayTicketBox" class="tray-ticket is-hidden"></div>
+    </div>
+  </aside>
+
+  <!-- Toast Feedback -->
+  <div class="pao-toast" id="paoToast" role="status" aria-live="polite">
+    <span style="color:var(--seal-orange);">✦</span>
+    <span id="paoToastText">Added to your PÀO Tray</span>
+  </div>
+
+  <!-- Vendored GSAP + ScrollTrigger + Lenis -->
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
